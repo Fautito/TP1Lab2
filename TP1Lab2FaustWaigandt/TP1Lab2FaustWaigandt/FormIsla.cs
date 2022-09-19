@@ -29,7 +29,7 @@ namespace TP1Lab2FaustWaigandt
             
 
 
-            Isla.h
+            //Isla.h
             for (int i=0; i < coord[0]; i++) 
             {
                 DgvIsla.Rows[i].Height = 50;

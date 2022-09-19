@@ -8,6 +8,7 @@ namespace TP1Lab2FaustWaigandt
 {
     class Raton : Animal
     {
+        public Raton(Isla i) : base(i) { }
         public override void Comer(object comida)
         {
             if(comida is Queso)

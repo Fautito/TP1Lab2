@@ -38,13 +38,17 @@ namespace TP1Lab2FaustWaigandt
         public int Saltos{ get { return saltos; } }
 
 
-        ArrayList quesos = new ArrayList();
+        public ArrayList quesos = new ArrayList();//array quesos. al ser comido, resta una porcion,
+                                                  //tenemos q filtrar los quesos que tienen 0 porciones,
+                                                  //quitarlos o que no se tengan en cuenta para volve a dibujar los elementos en sus posiciones
         ArrayList habitantes =new ArrayList();  
 
 
         public void DarSalto() 
         {
-            saltos++; 
+            saltos++; //suma una salto y recorre los array de quesos y habitantes
+                      //cada habitante hace sus movimientos
+                      //y vuelve a dibujar los que no estan muertos o comidos con las posiciones ya actualizadas
         }
     }
 }
