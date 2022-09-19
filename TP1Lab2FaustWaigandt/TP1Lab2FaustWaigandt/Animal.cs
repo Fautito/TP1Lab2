@@ -13,7 +13,7 @@ namespace TP1Lab2FaustWaigandt
 
         }
 
-
+        //gfdssfdfds
         private int[] posicion;
         public int[] Posicion { get { return posicion; } private set { posicion = value; } }
 
