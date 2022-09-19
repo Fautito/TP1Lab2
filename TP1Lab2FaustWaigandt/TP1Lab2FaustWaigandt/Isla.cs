@@ -9,12 +9,12 @@ namespace TP1Lab2FaustWaigandt
 {
     class Isla
     {
-        //soy una isla 2
+        
         public Isla(int[] dim, int q, int hab)
         {
             saltos = 0;
-            Dimensiones = new int[] { dim[0], dim[1] };
-            for(int i = 0; i < q; i++)
+            Dimensiones = new int[] { dim[0], dim[1] };//necesita recibir la dimension en un int[] ,indice 0 para las filas, indice 1 para las columnas
+            for (int i = 0; i < q; i++)
             {
                 quesos.Add(new Queso(new int[] { rnd.Next(dim[0]), rnd.Next(dim[1]) }));
             }
