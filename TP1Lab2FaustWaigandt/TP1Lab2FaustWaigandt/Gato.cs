@@ -8,6 +8,7 @@ namespace TP1Lab2FaustWaigandt
 {
     class Gato : Animal
     {
+        //tu hermana
         public override void Comer(object comida)
         {
             if(comida is Raton)
