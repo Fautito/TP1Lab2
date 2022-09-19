@@ -9,6 +9,7 @@ namespace TP1Lab2FaustWaigandt
 {
     class Isla
     {
+        //soy una isla 2
         public Isla(int[] dim, int q, int hab)
         {
             saltos = 0;
