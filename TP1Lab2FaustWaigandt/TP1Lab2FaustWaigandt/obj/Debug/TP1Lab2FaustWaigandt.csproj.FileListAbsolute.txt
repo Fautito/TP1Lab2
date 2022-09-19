@@ -1,0 +1,12 @@
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\bin\Debug\TP1Lab2FaustWaigandt.exe.config
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\bin\Debug\TP1Lab2FaustWaigandt.exe
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\bin\Debug\TP1Lab2FaustWaigandt.pdb
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.csproj.AssemblyReference.cache
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.csproj.SuggestedBindingRedirects.cache
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.Form1.resources
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.FormIsla.resources
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.Properties.Resources.resources
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.csproj.GenerateResource.cache
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.csproj.CoreCompileInputs.cache
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.exe
+C:\Users\gonza\source\repos\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.pdb
