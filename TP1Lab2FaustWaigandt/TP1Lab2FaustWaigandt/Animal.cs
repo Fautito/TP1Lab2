@@ -6,46 +6,68 @@ using System.Threading.Tasks;
 
 namespace TP1Lab2FaustWaigandt
 {
-    abstract class Animal
+    abstract class Animal:IPosicionable
     {
+        static protected Random rnd = new Random();
         public Animal(Isla isla)
         {
             this.i = isla;
-            
-            //necesita recibir la posicion en un int[] ,indice 0 para las filas, indice 1 para las columnas
-            //debe conocer a Isla para acceder a las dimensiones y saber si se cae al agua (raton) o se acerca a los bordes (gato)
-            //inicializa en cero pasos sin comer
-            //inicializa esta vivo en true
+            this.Posicion = new int[] { rnd.Next(isla.Dimensiones[0]), rnd.Next(isla.Dimensiones[1]) };
+            diasSinComer = 0;
+            diasVividos = 0;
+            estaVivo = true;
         }
+
+
         protected Isla i;
+
         private int[] posicion;
-        public int[] Posicion { get { return posicion; } private set { posicion = value; } }
+        public int[] Posicion 
+        { 
+            get { return posicion; } 
+            set { posicion = value; } 
+        }
 
 
         private bool estaVivo;
-        public bool EstaVivo { get { return estaVivo; } }
+        public bool EstaVivo 
+        { 
+            get { return estaVivo; } 
+            set { estaVivo = value; }
+        }
 
+
+        protected int diasVividos;
+        protected int diasSinComer;
+
+        virtual public void SumarDia() 
+        {
+            this.diasSinComer++;
+            this.diasVividos++;
+        }
         
-
-        protected int pasosSinComer;
-
-
-
         public virtual void Mover()
         {
-            //falta hacer que el animal se mueva
-            //  un random para indicar la direccion(1 o 0)
-            //  otro random entre -3 y 3 para indicar las posiciones (los numeros negativos indican pasos hacia atras, entonces con indicar un eje X o Y y una cantidad de pasos negativa o positiva ya se puede mover
-            //en todas las direcciones
-            //  este metodo se socreescribe en la clase gato, que tiene que ver que no se acerque al borde de la isla
+
+            if (rnd.Next(2) == 1)
+            {
+                this.Posicion[1] += rnd.Next(-3, 3);
+            }
+            else
+            {
+                this.Posicion[0] += rnd.Next(-3, 3);
+            }
+            
+            
         }
 
         public abstract void Comer(object comida);
-        //en la clase raton pregunta si es queso, lo come(resta una porcion) reinicia el contadro de dias sin comer 
-        //en la clase gato pregunta si es un raton, lo mata y reinicia el contador de dias sin comer
+       
 
         public void Morir()
         {
+            this.Posicion[0] = 0;
+            this.Posicion[1] = 0;
             estaVivo = false;
         }
     }

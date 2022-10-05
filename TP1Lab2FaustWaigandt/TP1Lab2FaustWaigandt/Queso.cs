@@ -15,10 +15,12 @@ namespace TP1Lab2FaustWaigandt
             Posicion = pos;
         }
 
-
-
         private int porciones;
-        public int Porciones { get { return porciones; } }
+        public int Porciones 
+        { 
+            get { return porciones; } 
+            private set { porciones = value; }
+        }
 
 
         private int[] posicion;
@@ -26,5 +28,11 @@ namespace TP1Lab2FaustWaigandt
 
         public void SerComido()
         { if (porciones > 0) porciones--; }
+
+
+        public override string ToString()
+        {
+            return $"Queso, Posicion {Posicion[0]} - {Posicion[1]}, {Porciones} porciones restantes";
+        }
     }
 }

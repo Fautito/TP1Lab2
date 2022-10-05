@@ -19,3 +19,6 @@ C:\Users\gonza\Source\Repos\TP1Lab2\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\ob
 C:\Users\gonza\Source\Repos\TP1Lab2\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.csproj.CoreCompileInputs.cache
 C:\Users\gonza\Source\Repos\TP1Lab2\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.exe
 C:\Users\gonza\Source\Repos\TP1Lab2\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\obj\Debug\TP1Lab2FaustWaigandt.pdb
+C:\Users\gonza\Source\Repos\TP1Lab2\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\bin\Debug\TP1Lab2FaustWaigandt.exe.config
+C:\Users\gonza\Source\Repos\TP1Lab2\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\bin\Debug\TP1Lab2FaustWaigandt.exe
+C:\Users\gonza\Source\Repos\TP1Lab2\TP1Lab2FaustWaigandt\TP1Lab2FaustWaigandt\bin\Debug\TP1Lab2FaustWaigandt.pdb
