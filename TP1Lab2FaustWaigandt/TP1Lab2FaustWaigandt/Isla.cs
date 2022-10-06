@@ -52,7 +52,7 @@ namespace TP1Lab2FaustWaigandt
         public ArrayList quesos = new ArrayList();
                                                   
         public ArrayList habitantes =new ArrayList();
-        ArrayList embarazos = new ArrayList();
+        public ArrayList embarazos = new ArrayList();
 
         public virtual void DarSalto() 
         {
@@ -76,11 +76,11 @@ namespace TP1Lab2FaustWaigandt
                 for (int i = raton.IndexOf(r) + 1; i < raton.Count; i++)
                 {
                     Raton r2 = (Raton)raton[1];
-                    if (r2.Genero != r.Genero)
+                    if (r.Posicion[0] == r2.Posicion[0] && r.Posicion[1] == r2.Posicion[1])
                     {
-                        if (r.Posicion[0] == r2.Posicion[0] && r.Posicion[1] == r2.Posicion[1])
+                        if (r2.Genero != r.Genero)
                         {
-                            embarazos.Add(10);
+                            embarazos.Add(10);//hay una cuestion aca con los embarazos, hay veces que no se agregan, habria que revisar la logica del recorrido del arraylist o las comparaciones
                         }
                     }
                 }
@@ -117,7 +117,7 @@ namespace TP1Lab2FaustWaigandt
                     int a = rnd.Next(2, 7);
                     AddHabitantes(a);
                     AddQuesos(a);
-
+                    embarazos.RemoveAt(i);
                 }
             }
 

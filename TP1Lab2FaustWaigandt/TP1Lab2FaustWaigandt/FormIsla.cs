@@ -52,7 +52,7 @@ namespace TP1Lab2FaustWaigandt
 
             mostrarHabitantes();
             LlenarList();
-           
+            label1.Text = "Aún no hay eventos";
         }
 
         private void FormIsla_Shown(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace TP1Lab2FaustWaigandt
                 listBox1.Items.Add(String.Format("los ratones han sobrevivido {0} dia" + "{1}", d, d > 1 ? "s" : ""));
             }
 
-
+            label1.Text = $"{Isla.Saltos/10} dias y {Isla.Saltos%10} saltos transcurridos, {Isla.embarazos.Count} embarazos en curso";
 
         }
 
@@ -144,6 +144,26 @@ namespace TP1Lab2FaustWaigandt
         private void FormIsla_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void DgvIsla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DgvIsla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string msg = "";
+            foreach(Queso q in Isla.quesos)
+            {
+                if (q.Posicion[0] == e.RowIndex && q.Posicion[1] == e.ColumnIndex && q.Porciones>0) msg +="\n"+q.ToString();
+            }
+            foreach(Animal hab in Isla.habitantes)
+            {
+                if (hab.Posicion[0] == e.RowIndex && hab.Posicion[1] == e.ColumnIndex && hab.EstaVivo) msg += "\n" + hab.ToString();
+            }
+            if(msg!="")
+                MessageBox.Show(msg);
         }
     }
 }
