@@ -9,6 +9,7 @@ namespace TP1Lab2FaustWaigandt
 {
     internal class IslaConGatos : Isla
     {
+        //ejecuta el constrcutor de Isla y luego agrega gatos a la lista de habitantes
         public IslaConGatos(int[] dim, int hab, int g) : base(dim, hab)
         {
             for(int i = 0; i < g; i++)
@@ -17,7 +18,8 @@ namespace TP1Lab2FaustWaigandt
             }
         }
 
-       
+        //primero los gatos comen a los ratones que se encuentran en la misma posiciones,
+        //luego pasa al metodo de la clase base
         public override void DarSalto()
         {
             
@@ -25,7 +27,6 @@ namespace TP1Lab2FaustWaigandt
             {
                 if(g is Gato && g.EstaVivo)
                 {
-                    
                     foreach (Animal r in habitantes)
                     {
                         if(r is Raton && r.EstaVivo)
@@ -36,16 +37,11 @@ namespace TP1Lab2FaustWaigandt
 
                             }
                         }
-                        
                     }
                     g.Mover();
                 }
-                
             }
-
-
             base.DarSalto();
-            
         }
     }
 }

@@ -14,16 +14,18 @@ namespace TP1Lab2FaustWaigandt
     {
         public static Random rnd = new Random();
         Isla Isla;
+
+
         public FormIsla(int[] coord, int r, bool predadores, int g )
         {
             InitializeComponent();
             if (predadores)
             {
-                Isla = new IslaConGatos(coord,r ,g);
+                Isla = new IslaConGatos(coord,r ,g);//-------------------------polimorfismo
             }
             else
             {
-                Isla = new Isla(coord, r);
+                Isla = new Isla(coord, r);//-----------------------------------polimorfismo
             }
             
 
@@ -42,12 +44,13 @@ namespace TP1Lab2FaustWaigandt
                 DgvIsla.Columns[i].Width = 50;  
             }
 
+
+            //controla el tamaño del formulario para que nada exceda los margenes
             this.Width = DgvIsla.Width + 435;
             this.Height= DgvIsla.Height + 85;
 
 
             mostrarHabitantes();
-
             LlenarList();
            
         }
@@ -57,15 +60,31 @@ namespace TP1Lab2FaustWaigandt
            
         }
 
+
+        /// <summary>
+        ///  boto n dar msalto---------limpia la isla, dibuja los habitantes y llena el listbox
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             Isla.DarSalto();
             ClearIsla();
             mostrarHabitantes();
             LlenarList();
+            int contRatones = 0;
+            foreach(Animal a in Isla.habitantes)
+            {
+                if (a is Raton && a.EstaVivo) contRatones++;
+            } 
+            if(contRatones == 0)
+            {
+                button1.Enabled = false;
+                listBox1.Items.Add("------------Simulacion terminada--------------");
+                double d = Math.Floor(Convert.ToDouble(Isla.Saltos / 10));
+                listBox1.Items.Add(String.Format("los ratones han sobrevivido {0} dia" + "{1}", d, d > 1 ? "s" : ""));
+            }
 
 
-            
+
         }
 
         void ClearIsla()
@@ -79,18 +98,23 @@ namespace TP1Lab2FaustWaigandt
             }
         }
 
+
+
+        /// <summary>
+        /// ---------------------------------------------------polimorfismo
+        /// </summary>
         void mostrarHabitantes()
         {
             foreach (Queso q in Isla.quesos)
             {
                 if(q.Porciones>0)
-                DgvIsla.Rows[q.Posicion[0]].Cells[q.Posicion[1]].Value = "Q";
+                DgvIsla.Rows[q.Posicion[0]].Cells[q.Posicion[1]].Value = "🧀";
             }
             foreach(Animal hab in Isla.habitantes)
             {
                 if (hab.EstaVivo)
                 {
-                    string h=hab is Raton?"R":"G";
+                    string h=hab is Raton?"🐀":"🐱";
 
                     DgvIsla.Rows[hab.Posicion[0]].Cells[hab.Posicion[1]].Value += h;
                 }
@@ -98,6 +122,10 @@ namespace TP1Lab2FaustWaigandt
             }
         }
 
+
+        /// <summary>
+        /// Limpia el listbox y lo vuelve a llenar-------------polimorfismo
+        /// </summary>
         void LlenarList()
         {
             listBox1.Items.Clear();

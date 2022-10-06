@@ -40,6 +40,7 @@ namespace TP1Lab2FaustWaigandt
             }
         }
 
+        //agrega 1 queso cada 2 habitantes ratones (antes de que el constructor de IslaConGatos agregue los gatos a la lista de habitantes) 
         void AddQuesos(int n) 
         {
             for (int i = 0; i < n / 2; i++)
@@ -55,39 +56,49 @@ namespace TP1Lab2FaustWaigandt
 
         public virtual void DarSalto() 
         {
-            
-            foreach(Animal hab in habitantes)
+
+            ArrayList raton = new ArrayList();
+            foreach (Animal hab in habitantes)
             {
-                if(hab is Raton && hab.EstaVivo)
+
+                if (hab is Raton && hab.EstaVivo)
                 {
-                    foreach (Queso q in quesos)
-                    {
-                        if (hab.Posicion[0] == q.Posicion[0] && hab.Posicion[1] == q.Posicion[1])
-                        {
-                            hab.Comer(q);
-                            break;
-                        }
-                    }
-                    //foreach entre ratones y comparar genero/ si son distintos isla suma a un arraylist de enteros la cantidad de pasos que faltan para el nacimiento
-                    for (int i = habitantes.IndexOf(hab) + 1; i < habitantes.Count; i++)
-                    {
-                        if (habitantes[i] is Raton)
-                        {
-                            Raton raton = (Raton)habitantes[i];
-                            if (((Raton)habitantes[i]).Genero != ((Raton)hab).Genero)
-                            {
-                                if (hab.Posicion[0] == raton.Posicion[0] && hab.Posicion[1] == raton.Posicion[1])
-                                {
-                                    embarazos.Add(10);
-                                }
-                            }
-                        }
-                    }
-                    hab.Mover();
+                    raton.Add(hab);
                 }
-                
             }
 
+            //for entre ratones y comparar genero/ si son distintos isla suma a un arraylist de enteros la cantidad de pasos que faltan para el nacimiento
+            //los machos embarazan a todas las hembras q comparten posicion
+            //las hembras  tienen tantos embarazos como machos en su posicion
+
+            foreach (Raton r in raton)
+            {
+                for (int i = raton.IndexOf(r) + 1; i < raton.Count; i++)
+                {
+                    Raton r2 = (Raton)raton[1];
+                    if (r2.Genero != r.Genero)
+                    {
+                        if (r.Posicion[0] == r2.Posicion[0] && r.Posicion[1] == r2.Posicion[1])
+                        {
+                            embarazos.Add(10);
+                        }
+                    }
+                }
+
+                //por cada raton se recorre los quesos buscando uno que tenga la misma posicion para comerlo
+                foreach (Queso q in quesos)
+                {
+                    if (r.Posicion[0] == q.Posicion[0] && r.Posicion[1] == q.Posicion[1])
+                    {
+                        r.Comer(q);//una vez q come, rompe la iteracion
+                        break;
+                    }
+                }
+
+                r.Mover(); //Mueve luego de aparearse y comer para que al volver a dibujarse
+                           //se pueda anticipar lo que va a suceder en el proximo paso
+            }
+                    
             saltos++;
             if (saltos % 10 == 0)
             {
